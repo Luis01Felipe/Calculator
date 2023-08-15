@@ -1,8 +1,9 @@
 plugins {
+    id "com.github.johnrengelman.shadow" version "8.1.1"
     id 'java'
 }
 
-group = 'com.github.Luis01Felipe'
+group = 'io.github.luis01felipe.calculator'
 version = '1.0-SNAPSHOT'
 
 repositories {
@@ -20,10 +21,12 @@ test {
 
 jar {
     manifest {
-        attributes "Main-Class": "main.java.Program"
+        attributes "Main-Class": "io.github.luis01felipe.calculator.Program"
     }
 
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
+
+build.finalizedBy('shadowJar')

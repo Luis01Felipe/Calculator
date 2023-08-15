@@ -1,3 +1,5 @@
+package io.github.luis01felipe.calculator;
+
 import javax.swing.*;
 import java.awt.event.*;
 
